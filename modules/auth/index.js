@@ -11,7 +11,7 @@ switch (requrl[0]){
       function(rows, fields, info){
         if(typeof rows[0] !== 'undefined'){
           global.core.db.select(
-            'SELECT * FROM `permissions` WHERE `userid` = ? ;',
+            'SELECT `permission` as `name`, `value` FROM `permissions` WHERE `userid` = ? ;',
             [rows[0].userid],
             function(permrows, permfields, perminfo){
               console.log(permrows);
