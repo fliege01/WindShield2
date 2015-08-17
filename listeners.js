@@ -10,6 +10,6 @@ var listeners = {
         staticdir = './static';
         
     var modulesfs = global.core.fs.readdirSync(moduledir);
-    console ('Es wurden folgende Module erkannt: %o ', modulesfs);
+    console.log ('Es wurden folgende Module erkannt: %o ', modulesfs);
   }
 }
