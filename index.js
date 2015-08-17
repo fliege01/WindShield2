@@ -35,6 +35,7 @@ global.core = {
     this.modules.events = require('events');
     this.e = new this.modules.events.EventEmitter();
     this.listener();
+    this.app.listen(this.config.port);
   },
   modules : {},
   listener : require('./listeners.js')
