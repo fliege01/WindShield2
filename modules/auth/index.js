@@ -28,7 +28,7 @@ switch (requrl[0]){
         }
           
       });
-    
+    res.send(JSON.stringify(out));
     break;
     
   case 'hardlogin':
@@ -41,10 +41,14 @@ switch (requrl[0]){
       "INSERT INTO `WS2`.`session` (`sessionid`, `userid`, `checkid`) VALUES (?, ? , ? );", 
       [newuuid,1,checkid]
     );
+    out = {
+      message : 'Logged In'
+    }
+    res.send(JSON.stringify(out));
     break;
 }
 
 
-res.send(JSON.stringify(out));
+
 
 }
