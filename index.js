@@ -33,7 +33,7 @@ global.core = {
       extended: true
     }));
     this.modules.events = require('events');
-    this.e = new this.module.events.EventEmitter();
+    this.e = new this.modules.events.EventEmitter();
     this.listener();
   },
   modules : {},
