@@ -23,7 +23,7 @@ var listeners = {
             global.core.app.use(jsonobj.usepath, global.modules[modulename]);
           }else{
             console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt');
-            console.log(global.modules);
+            console.log(global.modules[modulename]);
           }
         }else{
           console.log('Es fehlt für das Modul "%s" die index.js/package.json');
