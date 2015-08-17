@@ -1,8 +1,8 @@
 global.core = {
-  init = function(){
+  init : function(){
     console.log(this);
   },
-  port = 7085
+  port : 7085
 
 }
 
