@@ -13,6 +13,7 @@ global.core = {
   init : function(){
     this.config = require('./config.js');
     this.modules.express = require('express');
+    this.modules.uuid = require('uuid');
     this.modules.mysql = require('mysql');
     this.modules.cookieParser = require('cookie-parser');
     this.modules.bodyParser = require('body-parser');
