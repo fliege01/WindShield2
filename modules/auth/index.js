@@ -14,7 +14,6 @@ switch (requrl[0]){
             'SELECT `permission` as `name`, `value` FROM `permissions` WHERE `userid` = ? ;',
             [rows[0].userid],
             function(permrows, permfields, perminfo){
-              console.log(permrows);
               out = {
                 status : 200,
                 permissions : permrows
