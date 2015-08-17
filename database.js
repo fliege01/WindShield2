@@ -8,7 +8,7 @@ var database = {
       }
       callback(rows, fields, info);
     });
-  }
+  },
   
   insert : function(query, vals, callback){
     var validsql = global.core.modules.mysql.format(query, vals);
