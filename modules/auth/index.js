@@ -5,14 +5,29 @@ var out = {};
 
 switch (requrl[0]){
   case 'info':
+    global.core.db.query(
+      'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
+      [req.signedCookies],
+      function(rows, fields, info){
+        if(typeof rows[0] !== 'undefined'){
+          global.core.db.query(
+            'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
+            [req.signedCookies],
+            function(permrows, permfields, perminfo){
+              out = {
+                status : 200,
+                permissions : permrows
+              };
+            });
+        }else{
+          out = {
+            status : 4001,
+            message : "You're not logged in"
+          };
+        }
+          
+      });
     
-    
-    
-    
-    out = {
-        status : 4001,
-        message : "You're not logged in"
-      };
     break;
     
   case 'hardlogin':
