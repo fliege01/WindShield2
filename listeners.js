@@ -35,7 +35,7 @@ var listeners = {
     
     global.core.app.use('/static', global.core.modules.express.static(staticdir)); 
     global.core.app.get('/', function (req, res) {
-      res.sendFile(staticdir + '/static/index.html');
+      res.sendFile(staticdir + '/index.html');
     });
   }
 }
