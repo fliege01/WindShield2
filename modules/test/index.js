@@ -1,2 +1,4 @@
 
-module.exports = "haha";
+module.exports = function(){
+  return arr;
+}
