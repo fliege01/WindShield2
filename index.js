@@ -18,6 +18,7 @@ global.core = {
     this.modules.bodyParser = require('body-parser');
     this.modules.crypto = require('crypto');
     this.date = new Date();
+    this.fs = require('fs');
     this.pool = this.modules.mysql.createPool({           // Create MySQL-Connection-Pool
       connectionLimit : 100,
       host            : this.config.mysqlhost,
