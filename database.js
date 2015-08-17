@@ -6,7 +6,7 @@ var database = {
       var info = {
         sql : validsql,
       }
-      callback(rows, fields, info);
+      if(typeof callback === 'function') callback(rows, fields, info);
     });
   },
   
@@ -17,7 +17,8 @@ var database = {
       var info = {
         sql : validsql
       }
-      callback(result, info);
+      if(typeof callback === 'function') callback(result, info);
+      
     });
   }
 }
