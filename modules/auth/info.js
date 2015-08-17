@@ -1,5 +1,6 @@
 "use strict";
 module.exports = function(req, res, next){
+var out = {};
 global.core.db.select(
       'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
       [req.signedCookies.WSSESSION, req.signedCookies.WSCHECK],
