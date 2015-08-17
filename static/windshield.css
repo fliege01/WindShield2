@@ -1,0 +1,392 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+body{
+font-family: 'Noto Sans', sans-serif;
+background-color: rgb(202, 55, 20);
+overflow-x:hidden;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem;
+  width: 100%;
+  background-color: grey;
+  border: solid 0px;
+  color: white;
+  font-size: 15px;
+  margin-top: 2px;
+  display: block;
+  box-sizing: content-box;
+}
+.btn:hover {
+  background-color: rgb(95, 95, 95);
+}
+.btn:focus:hover {
+  background-color: rgb(111, 111, 111);
+}
+.btn.primary {
+    background-color: rgb(26, 72, 255);
+}
+.btn.primary:hover {
+  background-color: rgb(68, 105, 255);
+}
+.btn.primary:focus:hover {
+  background-color: rgb(25, 61, 208);
+}
+.btn.danger {
+  background-color: rgb(255, 57, 21);
+}
+.btn.danger:hover {
+  background-color: rgb(255, 69, 36);
+}
+.btn.danger:focus:hover {
+  background-color: rgb(228, 34, 0);
+}
+.btn.success {
+  background-color: rgb(46, 137, 16);
+}
+.btn.success:hover {
+  background-color: rgb(55, 153, 23);
+}
+.btn.success:focus:hover {
+  background-color: rgb(36, 131, 5);
+}
+
+/* Buttons End */
+
+/* Loadingbar */
+
+/* Loadingbar End */
+.loadingbar {
+position:fixed;
+top:0;
+left:0;
+height:0.5em;
+background-color:rgb(158, 0, 0);
+z-index:550;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+-webkit-animation: progress-bar-stripes 1s linear infinite;
+  -o-animation: progress-bar-stripes 1s linear infinite;
+  animation: progress-bar-stripes 1s linear infinite;
+  -webkit-transition: width 0.8s; 
+  transition: width 0.8s;
+}
+
+
+/* Loading Screen */
+
+.loadingscreen {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index:500;
+}
+.loadingscreen span {
+  right: 50%;
+  left: 50%;
+  bottom: 50%;
+  color:white;
+  position:fixed;
+}
+.loadingscreen noscript span {
+  margin-left: -11em;
+  margin-right: -11em;
+  margin-bottom: -5em;
+}
+.loader {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+@-webkit-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}@-o-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}@keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}
+/* Loading Screen End*/
+
+/* Modal Layout */
+.modal{
+ position:fixed;
+ right:-50%;
+ top:0%;
+ width:30%;
+ background-color:white;
+ height:100%;
+ border-left: solid 2px grey;
+ z-index:100;
+}
+.modal .content{
+  margin-left:1em;
+  margin-right:1em;
+}
+.modal h2 {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.modal input {
+  width: 31em;
+  height: 2.5em;
+  font-size: 14px;
+  margin-bottom: 0.5em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  max-width: 90%;
+}
+span.edit , span.close{
+  float: right;
+  width: 1.5em;
+  height: 2em;
+  padding-top: 0.5em;
+  padding-left: 0.9em;
+  padding-right:0.1em;
+  background-color: rgb(255, 255, 255);
+  margin-left: 0.4em;
+  cursor: pointer;
+}
+span.edit:hover, span.close:hover {
+  background-color: rgb(131, 131, 131);
+  color: white;
+}
+.bottom {
+  padding-left: 0.9em;
+  padding-right: 0.9em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+/* Modal layout End */
+
+/* Menu bar */
+nav {
+  position: fixed;
+  left: -20rem;
+  top: 0;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  font-size: 14px;
+  width: 18rem;
+  height: 100%;
+  overflow-y: auto;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li a.mainlink {
+  padding: 0.8rem;
+  padding-left: 3rem;
+  padding-right: 0rem;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+nav ul li:hover a.mainlink:hover{
+  background-color: rgb(63, 63, 63);
+}
+nav ul li .dropdownbtn {
+  position:absolute;
+  right:0;
+  top:0;
+  float: right;
+  height: 1rem;
+  width: 1rem;
+  padding: 1rem;
+  padding-top: 0.7rem;
+  padding-bottom: 1.06rem;
+}
+nav ul li .dropdownbtn:hover {
+  background-color: rgb(50, 50, 50);
+  cursor:pointer;
+}
+nav ul li ul.dropdown {
+  padding-left: 3rem;
+  display: none;
+}
+nav ul li ul li a {
+  margin-left:-3rem;
+  padding: 0.8rem;
+  padding-left: 6rem;
+  padding-right: 0rem;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+nav ul li ul.dropdown li:hover a{
+  background-color: rgb(63, 63, 63);
+}
+
+nav input.globalsearch {
+  width: 17rem;
+  border: 0px;
+  height: 3rem;
+  background-color: rgb(46, 137, 16);
+  color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+nav input.globalsearch.warning {
+  background-color: rgb(255, 126, 0);
+}
+
+
+/* Menu bar end */
+
+/* Wrapper */
+
+.wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+}
+
+/* Wrapper end */
+
+table {
+  width: 75%;
+  border-spacing: 0;
+  margin-left:-10px;
+}
+th, td{
+  padding-left:1em;
+  padding-right:1em;
+  text-align: left;
+}
+th:first-child, td:first-child {
+    text-align: right;
+}
+
+th:last-child {
+  border-bottom-right-radius: 5px;
+}
+tr:nth-child(2n) {
+  background-color: rgb(236, 236, 236);
+}
+thead {
+  background-color: rgb(63, 63, 63);
+  color: rgb(255,255,255);
+  -webkit-transition: background-color 200ms linear;
+  -moz-transition: background-color 200ms linear;
+  -o-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+thead.search {
+  background-color: rgb(46, 137, 16);
+}
+
+.form-control {
+  margin-top:5px;
+}
+input.form-control[type="text"], select.form-control {
+  height: 2rem;
+  font-size: 14px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  width:100%;
+}
+select.form-control {
+  box-sizing: content-box;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.row .col-1, .row .col-2, .row .col-3, .row .col-4, .row .col-5, .row .col-6, .row .col-7, .row .col-8, .row .col-9, .row .col-10, .row .col-11, .row .col-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-6 {
+  width:50%;
+}
+.col-1 {
+  width:8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width:25%;
+}
+.col-9 {
+  width:75%;
+}
+.col-12 {
+  width:100%;
+}
