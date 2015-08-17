@@ -2,5 +2,7 @@ module.exports = {
 mysqlhost : '',
 mysqluser : '',
 mysqlpass : '',
-mysqlname : ''
+mysqlname : '',
+
+port : 7093
 }
