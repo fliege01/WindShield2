@@ -1,5 +1,5 @@
 "use strict";
-let info = require('./info.js');
+var info = require('./info.js');
 module.exports = function(req, res, next){
 var requrl = req.url.split('/').filter(Boolean);
 var out = {};
