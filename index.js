@@ -32,7 +32,7 @@ global.core = {
     this.app.use(this.modules.bodyParser.urlencoded({     // to support URL-encoded bodies
       extended: true
     }));
-    this.module.events = require('events');
+    this.modules.events = require('events');
     this.e = new this.module.events.EventEmitter();
     this.listener();
   },
