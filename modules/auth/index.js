@@ -15,5 +15,9 @@ switch (requrl[0]){
 }
 
 
-res.send(JSON.stringify(out));
+if(req.xhr){
+  res.send(JSON.stringify(out));
+}else{
+  // Render HTML File
+}
 }
