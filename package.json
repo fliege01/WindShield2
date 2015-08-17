@@ -1,27 +1,27 @@
 {
-  "name": "WindShield2",
-  "version": "1.0.0",
-  "description": "Sportserver",
-  "author": "Nico Bischof <nico@livespawn.de>",
-  "scripts": {
-    "start": "node index.js",
-    "predeploy": "echo im about to deploy",
-    "postdeploy": "echo ive deployed",
-  },
-  "repository": {
-  "type": "git",
-  "url": "https://github.com/fliege01/WindShield2/"
-},
-  "bugs": {
-  "url": "https://github.com/fliege01/WindShield2/issues"
-},
-  "dependencies": {
-    "express": "4.2.x",
-    "mysql": "*",
-    "cookie-parser":"*",
-    "body-parser": "*"
-  },
-  "private": true,
-  "subdomain": "windshield",
-  "analyze": true
+    "name": "WindShield2",
+    "version": "1.0.0",
+    "description": "Sportserver",
+    "author": "Nico Bischof <nico@livespawn.de>",
+    "scripts": {
+        "start": "node index.js",
+        "predeploy": "echo im about to deploy",
+        "postdeploy": "echo ive deployed"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fliege01/WindShield2/"
+    },
+    "bugs": {
+        "url": "https://github.com/fliege01/WindShield2/issues"
+    },
+    "dependencies": {
+        "express": "4.2.x",
+        "mysql": "*",
+        "cookie-parser": "*",
+        "body-parser": "*"
+    },
+    "private": true,
+    "subdomain": "windshield",
+    "analyze": true
 }
