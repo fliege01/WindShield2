@@ -19,8 +19,7 @@ var listeners = {
         if(jsexists && jsonexists){
           var jsonobj = JSON.parse(global.core.fs.readFileSync(moduledir + '/' + modulename + '/package.json'));
           global.modules[modulename] = require(moduledir + '/' + modulename + '/index.js');
-          console.log(typeof global.modules[modulename]);
-          if(typeof global.modules[modulename] === 'fucntion'){
+          if(typeof global.modules[modulename] === 'function'){
             console.log(true);
             global.core.app.use(jsonobj.usepath, global.modules[modulename]);
           }else{
