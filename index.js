@@ -27,6 +27,7 @@ global.core = {
       password        : this.config.mysqlpass,
       database        : this.config.mysqlname
     });
+    this.db = require('./database.js');
     this.app = this.modules.express();
     this.app.use(this.modules.cookieParser());            // Cookie-Pharser included
     this.app.use(this.modules.bodyParser.json());         // Enable JSON-body support
