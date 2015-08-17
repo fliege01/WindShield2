@@ -32,10 +32,10 @@ var listeners = {
       
       
     });
-    
-    global.core.app.use('/static', global.core.modules.express.static(staticdir)); 
     global.core.app.get('/', function (req, res) {
       res.sendFile(__dirname + '/static/index.html');
     });
+    global.core.app.use('/static', global.core.modules.express.static(staticdir)); 
+    
   }
 }
