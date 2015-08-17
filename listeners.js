@@ -20,14 +20,13 @@ var listeners = {
           var jsonobj = JSON.parse(global.core.fs.readFileSync(moduledir + '/' + modulename + '/package.json'));
           global.modules[modulename] = require(moduledir + '/' + modulename + '/index.js');
           if(typeof global.modules[modulename] === 'function'){
-            console.log(true);
             global.core.app.use(jsonobj.usepath, global.modules[modulename]);
           }else{
-            console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt');
+            console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', modulename);
             console.log(global.modules);
           }
         }else{
-          console.log('Es fehlt für das Modul "%s" die index.js/package.json');
+          console.log('Es fehlt für das Modul "%s" die index.js/package.json', modulename);
         }
      
       
