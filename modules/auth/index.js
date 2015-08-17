@@ -9,9 +9,10 @@ switch (requrl[0]){
       'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
       [req.signedCookies],
       function(rows, fields, info){
-        if(typeof rows[0] !== 'undefined'){
+        console.log(rows);
+        if(typeof rows[0]['userid'] !== 'undefined'){
           global.core.db.query(
-            'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
+            'SELECT * FROM `permissions` WHERE `userid` = ? ;',
             [req.signedCookies],
             function(permrows, permfields, perminfo){
               out = {
