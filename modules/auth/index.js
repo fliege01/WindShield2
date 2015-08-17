@@ -28,9 +28,9 @@ switch (requrl[0]){
           };
           console.log(out);
         }
-          
+          res.send(JSON.stringify(out));
       });
-    res.send(JSON.stringify(out));
+    
     break;
     
   case 'hardlogin':
