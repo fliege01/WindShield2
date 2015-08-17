@@ -1,4 +1,4 @@
 
-module.exports = function(){
-  return arr;
+module.exports = function(req, res, next){
+  res.send('Test Module');
 }
