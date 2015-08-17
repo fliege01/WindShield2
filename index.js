@@ -35,7 +35,7 @@ global.core = {
     this.listener();
   },
   modules : {},
-  listener : require('./listeners.js');
+  listener : require('./listeners.js')
   
 
 }
