@@ -5,13 +5,13 @@ var out = {};
 
 switch (requrl[0]){
   case 'info':
-    global.core.db.query(
+    global.core.db.select(
       'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
       [req.signedCookies],
       function(rows, fields, info){
         console.log(rows);
         if(typeof rows[0]['userid'] !== 'undefined'){
-          global.core.db.query(
+          global.core.db.select(
             'SELECT * FROM `permissions` WHERE `userid` = ? ;',
             [req.signedCookies],
             function(permrows, permfields, perminfo){
