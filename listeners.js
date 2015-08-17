@@ -33,7 +33,7 @@ var listeners = {
       
     });
     global.core.app.get('/', function (req, res) {
-      res.redirect('/static/');
+      res.redirect('/static/');  // Noch nicht das wahre... :/
     });
     global.core.app.use('/static', global.core.modules.express.static(staticdir)); 
     
