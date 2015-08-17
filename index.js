@@ -31,7 +31,9 @@ global.core = {
     this.app.use(this.modules.bodyParser.json());         // Enable JSON-body support
     this.app.use(this.modules.bodyParser.urlencoded({     // to support URL-encoded bodies
       extended: true
-    })); 
+    }));
+    this.module.events = require('event');
+    this.e = new this.module.events.EventEmitter();
     this.listener();
   },
   modules : {},
