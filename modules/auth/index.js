@@ -19,12 +19,14 @@ switch (requrl[0]){
                 status : 200,
                 permissions : permrows
               };
+              console.log(out);
             });
         }else{
           out = {
             status : 4001,
             message : "You're not logged in"
           };
+          console.log(out);
         }
           
       });
