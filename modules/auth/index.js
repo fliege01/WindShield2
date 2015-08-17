@@ -9,12 +9,12 @@ switch (requrl[0]){
       'SELECT `userid` FROM `session` WHERE `sessionid` = ? AND `checkid` = ? ;',
       [req.signedCookies.WSSESSION, req.signedCookies.WSCHECK],
       function(rows, fields, info){
-        console.log(rows);
         if(typeof rows[0] !== 'undefined'){
           global.core.db.select(
             'SELECT * FROM `permissions` WHERE `userid` = ? ;',
-            [rows[0]['userid']],
+            [rows[0].userid],
             function(permrows, permfields, perminfo){
+              console.log(permrows);
               out = {
                 status : 200,
                 permissions : permrows
