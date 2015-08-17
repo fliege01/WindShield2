@@ -18,7 +18,7 @@ global.core = {
     this.modules.bodyParser = require('body-parser');
     this.modules.crypto = require('crypto');
     this.date = new Date();
-    this.pool = this.modules.mysql.createPool({ // Create MySQL-Connection-Pool
+    this.pool = this.modules.mysql.createPool({           // Create MySQL-Connection-Pool
       connectionLimit : 100,
       host            : this.config.mysqlhost,
       user            : this.config.mysqluser,
@@ -26,14 +26,15 @@ global.core = {
       database        : this.config.mysqlname
     });
     this.app = this.modules.express();
-    this.app.use(this.modules.cookieParser()); // Cookie-Pharser included
-    this.app.use(this.modules.bodyParser.json()); // Enable JSON-body support
+    this.app.use(this.modules.cookieParser());            // Cookie-Pharser included
+    this.app.use(this.modules.bodyParser.json());         // Enable JSON-body support
     this.app.use(this.modules.bodyParser.urlencoded({     // to support URL-encoded bodies
       extended: true
     })); 
   
   },
-  modules : {}
+  modules : {},
+  listener : require('./listeners.js');
   
 
 }
