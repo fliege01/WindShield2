@@ -32,5 +32,7 @@ var listeners = {
       
       
     });
+    
+    global.core.app.use('/static', global.core.modules.express.static(staticdir)); 
   }
 }
