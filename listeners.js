@@ -12,7 +12,8 @@ var listeners = {
         
     var modulesfs = global.core.fs.readdirSync(moduledir);
     console.log ('Es wurden folgende Module erkannt: ', modulesfs);
-    for (modulename of modulesfs){
+    console.log(modulesfs);
+    modulesfs.forEach({
       var jsexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/index.js');
       var jsonexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/package.json');
         if(jsexists && jsonexists){
@@ -29,6 +30,6 @@ var listeners = {
      
       
       
-    }
+    });
   }
 }
