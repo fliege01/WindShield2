@@ -20,12 +20,16 @@ var listeners = {
           if(jsexists){
             global.modules[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.main);
             if(typeof global.modules[jsonobj.name] === 'function'){
-              if(typeof jsonobj.usepath !== 'undefined'){
-                global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
-              }
+              global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
             }else{
               console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', jsonobj.name);
             }
+          }
+          var jsiexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.include);
+          if(jsexists){
+            global.corepack[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.include);
+          }else{
+            console.log('CorePack "%s" nicht gefunden', jsonobj.name);
           }
           
         }else{
