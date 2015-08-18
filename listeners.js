@@ -26,7 +26,7 @@ var listeners = {
             }
           }
           var jsiexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.include);
-          if(jsexists && typeof jsonobj.include !== 'undefined'){
+          if(jsiexists && typeof jsonobj.include !== 'undefined'){
             global.corepack[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.include);
           }else{
             console.log('CorePack "%s" nicht gefunden', jsonobj.name);
