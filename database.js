@@ -30,10 +30,10 @@ var database = {
         sql : validsql
       }
       if(typeof callback === 'function') callback(result, info);
-    }
+    });
     
   }
-}
+
   
 };
 module.exports = database;
