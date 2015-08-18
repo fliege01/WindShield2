@@ -11,22 +11,23 @@ var listeners = {
         staticdir = './static';
         
     var modulesfs = global.core.fs.readdirSync(moduledir);
-    console.log ('Es wurden folgende Module erkannt: ', modulesfs);
     modulesfs.forEach(function(modulename){
-      console.log('Verarbeite Modul "'+ modulename +'"');
-      var jsexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/index.js');
+      
       var jsonexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/package.json');
-        if(jsexists && jsonexists){
+        if(jsonexists){
           var jsonobj = JSON.parse(global.core.fs.readFileSync(moduledir + '/' + modulename + '/package.json'));
-          global.modules[modulename] = require(moduledir + '/' + modulename + '/index.js');
-          if(typeof global.modules[modulename] === 'function'){
-            global.core.app.use(jsonobj.usepath, global.modules[modulename]);
-          }else{
-            console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', modulename);
-            console.log(global.modules);
+          var jsexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.main);
+          if(jsexists){
+            global.modules[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.main);
+            if(typeof global.modules[jsonobj.name] === 'function'){
+              global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
+            }else{
+              console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', jsonobj.name);
+            }
           }
+          
         }else{
-          console.log('Es fehlt für das Modul "%s" die index.js/package.json', modulename);
+          console.log('Es fehlt für das Modul "%s" die package.json', modulename);
         }
      
       
