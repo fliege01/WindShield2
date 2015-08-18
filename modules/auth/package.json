@@ -1,5 +1,6 @@
 {
     "name": "auth",
     "usepath": "/auth",
-    "main": "index.js"
+    "main": "index.js",
+    "include": "include.js"
 }
