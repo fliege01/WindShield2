@@ -8,6 +8,7 @@ module.exports = function(req, res, next){
         "SELECT * FROM `user` WHERE `username` LIKE ? ",
         [req.body.username],
         function(rows, fields, info){
+          console.log(rows);
           if(global.modules['passwordcrypt'].verify(rows[0].password, req.body.password)){
             
             var newuuid = global.core.modules.uuid.v4();
