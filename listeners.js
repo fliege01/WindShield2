@@ -16,7 +16,9 @@ var listeners = {
       
       var jsonexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/package.json');
         if(jsonexists){
+          
           var jsonobj = JSON.parse(global.core.fs.readFileSync(moduledir + '/' + modulename + '/package.json'));
+          console.log(jsonobj);
           var jsexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.main);
           if(jsexists){
             global.modules[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.main);
