@@ -32,7 +32,8 @@ var database = {
       if(typeof callback === 'function') callback(result, info);
     }
     
-  
+  }
+}
   
 };
 module.exports = database;
