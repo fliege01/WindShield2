@@ -1,4 +1,5 @@
 {
     "name": "maintrancemode",
-    "usepath": "*"
+    "usepath": "*",
+    "main": "index.js"
 }
