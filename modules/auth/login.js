@@ -9,6 +9,20 @@ module.exports = function(req, res, next){
         [req.body.username],
         function(rows, fields, info){
           if(global.modules['passwordcrypt'].verify(rows[0].password, req.body.password)){
+            
+            var newuuid = global.core.modules.uuid.v4();
+            var checkid = global.core.modules.uuid.v4();
+            res.cookie('WSSESSION', newuuid , { maxAge: 900000, signed: true });
+            res.cookie('WSCHECK', checkid , { maxAge: 900000, signed: true });
+    
+            global.core.db.insert(
+              "INSERT INTO `session` (`sessionid`, `userid`, `checkid`) VALUES (?, ? , ? );", 
+              [newuuid,rows[0].id,checkid]
+            );
+            
+            
+            
+            
             out = {
               status : 200,
               message : "login success"
