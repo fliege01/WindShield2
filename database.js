@@ -12,7 +12,7 @@ var database = {
   
   insert : function(query, vals, callback){
     var validsql = global.core.modules.mysql.format(query, vals);
-    global.core.pool.query(validsql, {title: 'test'}, function(err, result) {
+    global.core.pool.query(validsql, function(err, result) {
       if (err) throw err;
       var info = {
         sql : validsql
@@ -20,6 +20,18 @@ var database = {
       if(typeof callback === 'function') callback(result, info);
       
     });
+  },
+  
+  delete : function(query, vals, callback){
+    var validsql = global.core.modules.mysql.format(query, vals);
+    global.core.pool.query(validsql, function(err, result) {
+      if (err) throw err;
+      var info = {
+        sql : validsql
+      }
+      if(typeof callback === 'function') callback(result, info);
+    }
+    
   }
 }
 module.exports = database;
