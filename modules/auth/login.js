@@ -8,7 +8,7 @@ module.exports = function(req, res, next){
         "SELECT * FROM `user` WHERE `username` LIKE ? ",
         [req.body.username],
         function(rows, fields, info){
-          console.log(rows);
+          if(typeof rows[0] !== 'undefined'){
           if(global.modules['passwordcrypt'].verify(rows[0].password, req.body.password)){
             
             var newuuid = global.core.modules.uuid.v4();
@@ -29,6 +29,13 @@ module.exports = function(req, res, next){
               message : "login success"
             };
             res.send(JSON.stringify(out));
+          }else{
+            out = {
+              code : 403,
+              message : 'login canceled'
+            };
+            res.send(JSON.stringify(out));
+          }
           }else{
             out = {
               code : 403,
