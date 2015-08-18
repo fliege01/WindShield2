@@ -7,6 +7,7 @@ module.exports = function() {
 var listeners = {
   init : function(){
     global.modules = {};
+    global.corepack = {};
     var moduledir = './modules',
         staticdir = './static';
         
