@@ -20,7 +20,9 @@ var listeners = {
           if(jsexists){
             global.modules[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.main);
             if(typeof global.modules[jsonobj.name] === 'function'){
-              global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
+              if(typeof jsonobj.usepath !== 'undefined'){
+                global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
+              }
             }else{
               console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', jsonobj.name);
             }
