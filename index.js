@@ -40,7 +40,10 @@ global.core = {
     this.httpserver = this.app.listen(this.config.port);
   },
   modules : {},
-  listener : require('./listeners.js')
+  listener : require('./listeners.js'),
+  moduleExists : function(modulename){
+    return typeof global.modules[modulename];
+  }
   
 
 }
