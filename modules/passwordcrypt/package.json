@@ -1,4 +1,4 @@
 {
     "name": "passwordcrypt",
-    "main": "index.js"
+    "include": "index.js"
 }
