@@ -1,0 +1,5 @@
+{
+    "name": "API",
+    "usepath": "/api",
+    "main": "index.js"
+}
