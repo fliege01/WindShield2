@@ -16,24 +16,27 @@ var listeners = {
       
       var jsonexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/package.json');
         if(jsonexists){
-          
-          var jsonobj = JSON.parse(global.core.fs.readFileSync(moduledir + '/' + modulename + '/package.json'));
+        var jsonobj = JSON.parse(global.core.fs.readFileSync(moduledir + '/' + modulename + '/package.json'));
+        if(typeof jsonobj.main !== 'undefined'){
           console.log(jsonobj);
           var jsexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.main);
-          if(jsexists){
-            global.modules[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.main);
-            if(typeof global.modules[jsonobj.name] === 'function'){
-              global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
-            }else{
-              console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', jsonobj.name);
+            if(jsexists){
+              global.modules[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.main);
+              if(typeof global.modules[jsonobj.name] === 'function'){
+                global.core.app.use(jsonobj.usepath, global.modules[jsonobj.name]);
+              }else{
+                console.log('Das Modul "%s" konnte nicht korrekt geladen werden. Es wird eine Funktion benötigt', jsonobj.name);
+              }
             }
-          }
-          var jsiexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.include);
-          if(jsiexists){
-            global.corepack[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.include);
-          }else{
-            console.log('CorePack "%s" nicht gefunden', jsonobj.name);
-          }
+        }
+        if(typeof jsonobj.include !== 'undefined'){
+            var jsiexists = global.core.fs.existsSync(moduledir + '/' + modulename + '/' + jsonobj.include);
+            if(jsiexists){
+              global.corepack[jsonobj.name] = require(moduledir + '/' + modulename + '/' + jsonobj.include);
+            }else{
+             console.log('CorePack "%s" nicht gefunden', jsonobj.name);
+            }
+        }
           
         }else{
           console.log('Es fehlt für das Modul "%s" die package.json', modulename);
