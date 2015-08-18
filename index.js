@@ -29,7 +29,7 @@ global.core = {
     });
     this.db = require('./database.js');
     this.app = this.modules.express();
-    this.app.use(this.modules.cookieParser("windshield"));// Cookie-Pharser included
+    this.app.use(this.modules.cookieParser(this.config.secret));  // Cookie-Pharser included
     this.app.use(this.modules.bodyParser.json());         // Enable JSON-body support
     this.app.use(this.modules.bodyParser.urlencoded({     // to support URL-encoded bodies
       extended: true
