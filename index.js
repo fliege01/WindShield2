@@ -3,6 +3,7 @@
 var cluster = require ('cluster');
 if (cluster.isMaster){ 
   var numCPUs = require('os').cpus().length;
+  numCPUs = 1;
   console.log("Es wurden %i CPU-Kerne gefunden", numCPUs);
   for (var i = 0; i < numCPUs; i++) {
     cluster.fork();
