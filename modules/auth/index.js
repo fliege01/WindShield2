@@ -28,10 +28,10 @@ switch (requrl[0]){
     break;
     
   default :
-    req.send('');
+    res.send('');
 }
 
 
 
 
-}
+};
