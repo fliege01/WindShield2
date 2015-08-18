@@ -19,6 +19,9 @@ switch (requrl[0]){
   case 'login':
     CMDlogin(req, res, next);
     break;
+    
+  default :
+    req.send('');
 }
 
 
