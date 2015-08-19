@@ -56,7 +56,7 @@ athletequery : {  // Hier befinden sich die Einstellungen für die alternativen 
     10 : [60 , 64],
     11 : [65 , 69]
   }
-};
+}
 
 
 }
