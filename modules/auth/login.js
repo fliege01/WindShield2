@@ -30,6 +30,7 @@ module.exports = function(req, res, next){
               status : 200,
               message : "login success"
             };
+            console.log(out);
             res.send(JSON.stringify(out));
           }else{
             out = {
