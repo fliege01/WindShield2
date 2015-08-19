@@ -12,9 +12,7 @@ var WS = {
       onEditClick : null,
       onShowFinish : null
     };
-    if(typeof params !== 'undefined' && typeof params === 'object'){
-      WS.objectMerge(this.params, params);
-    } 
+    WS.objectMerge(this.params, params);
       
     
   },
