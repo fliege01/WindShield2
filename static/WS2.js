@@ -1,5 +1,5 @@
 var WS = {
-  modal : function(innerHtml, params, callback){
+  modal : function(innerHtml, params){
     if(typeof innerhtml !== 'undefined'){ this.innerHtml = innerHtml; }else{ this.innerHtml = '[DUMMY]'; }
     this.params = {
       title : '[DUMMY]',
