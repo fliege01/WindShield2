@@ -2,6 +2,7 @@
 
 module.exports = function(req, res, next){
     if(req.method == 'POST'){
+        console.log(global.corepack['passwordcrypt']);
       global.core.db.insert(
         "INSERT INTO `user` (`id`, `username`, `password`) VALUES (NULL, ? , ? );",
         [req.body.username, global.corepack['passwordcrypt'].generate(req.body.password)],
