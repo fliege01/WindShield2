@@ -43,7 +43,7 @@ var WS = {
     this.hide = function(){
       $(this.DOM).off();
       $(this.DOM).remove();
-      this = {};
+      this.DOM = undefined;
     }
       
     return this;
