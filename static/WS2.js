@@ -16,16 +16,10 @@ var WS = {
     this.params = WS.objectMerge(this.params, params);
     
     var modalHtml = '<div class="modal">';
-    if(this.params.cancelable == true){
-    modalHtml += '<span class="close"><i class="fa fa-times"></i></span>';
-    }
-    if(this.params.editable == true){
-    modalHtml += '<span class="edit"><i class="fa fa-pencil"></i></span>';
-    }
+    if(this.params.cancelable == true){ modalHtml += '<span class="close"><i class="fa fa-times"></i></span>'; }
+    if(this.params.editable == true){ modalHtml += '<span class="edit"><i class="fa fa-pencil"></i></span>'; }
     modalHtml += '<h2>' + this.params.title + '</h2><div class="content">' + this.innerHtml + '<button data-button="submit" class="btn primary">'+ this.params.buttontext + '</button>';
-    if(this.params.cancelable == true){
-    modalHtml += '<button data-button="cancel" class="btn">Abbrechen</button>';
-    }
+    if(this.params.cancelable == true){ modalHtml += '<button data-button="cancel" class="btn">Abbrechen</button>'; }
     modalHtml += '</div></div>';
     
     this.DOM = $(modalHtml).appendTo('body');
@@ -34,7 +28,9 @@ var WS = {
     this.DOM.animate({right:0},1000);
     
     if(this.params.cancelable == true){
-      
+      $(this.DOM).children('.close').on('click', function(e){
+        console.log('Close');
+      });
     }
     if(this.params.editable == true){
       
@@ -43,7 +39,10 @@ var WS = {
     this.hide = function(){
       $(this.DOM).off();
       $(this.DOM).remove();
-      this.DOM = undefined;
+      this.DOM.animate({right:0},1000, function(){
+        this.DOM = undefined;
+      });
+      
     }
       
     return this;
@@ -58,3 +57,10 @@ var WS = {
   
   
 };
+
+
+
+$( document ).ready(function() {
+$('.loadingscreen').fadeOut(800);
+});
+
