@@ -56,23 +56,15 @@ var WS = {
   },
   ajax : function(path, params, callback){
     if(typeof callback == 'undefined' && typeof params == 'function'){
-      console.log('var2 is a function');
       var type = "GET";
       var var2 = params;
-    }else if(typeof callback == 'undefined' && typeof params == 'object'){
-      console.log('var2 is a object');
-      var type = "POST";
-      var var2 = params;
     }else if(typeof callback == 'function' && typeof params == 'object'){
-      console.log('var2 is a object an callback is set');
       var type = "POST";
       var var2 = params;
-    }else{
-    	console.log('Wir haben ein Problem... AJAX');
     }
     $.ajax({
         url: path,
-		    type: type
+	type: type
     })
     .done(function( d ) {
     	if(typeof callback === 'function'){
