@@ -1,11 +1,7 @@
 var WS = {
   modal : function(innerHtml, params){
     console.log(typeof innerHtml);
-    if(typeof innerhtml === 'string'){
-      this.innerHtml = innerHtml;
-    }else{
-      //this.innerHtml = '[DUMMY]';
-    }
+    this.innerHtml = innerHtml;
     console.log(this.innerHtml);
     this.params = {
       title : '[DUMMY]',
