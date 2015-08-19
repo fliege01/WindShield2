@@ -14,7 +14,7 @@ var WS = {
     };
     this.params = WS.objectMerge(this.params, params);
       
-    
+    return this;
   },
   objectMerge : function(obj1, obj2){
     var obj3 = {};
