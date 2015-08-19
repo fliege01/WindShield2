@@ -31,7 +31,7 @@ var WS = {
     
     this.DOM = $(this.modalHtml).appendTo('body');
     var pos = $(window).width() - this.params.width;
-      this.DOM.width( this.params.width 'px');
+      this.DOM.width( this.params.width + 'px');
       this.DOM.animate({right:0},1000);
       
     
