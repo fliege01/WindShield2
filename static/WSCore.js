@@ -190,7 +190,7 @@ WSCore.func.login = function (username,password, callback) {
           }
       })
       .done(function( data ) {
-      	console.log(data.status);
+      	data = JSON.parse(data);
         var result;
         if(data.status == 200){
           result = data;
