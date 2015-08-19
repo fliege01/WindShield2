@@ -1,6 +1,6 @@
 var WS = {
   modal : function(innerHtml, params){
-    console.log(innerHtml);
+    console.log(typeof innerHtml);
     if(typeof innerhtml !== 'undefined'){ this.innerHtml = innerHtml; }else{ this.innerHtml = '[DUMMY]'; }
     console.log(this.innerHtml);
     this.params = {
