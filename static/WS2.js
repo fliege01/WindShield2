@@ -1,8 +1,7 @@
+"use strict";
 var WS = {
   modal : function(innerHtml, params){
-    console.log(typeof innerHtml);
     this.innerHtml = innerHtml;
-    console.log(this.innerHtml);
     this.params = {
       title : '[DUMMY]',
       buttontext : '[DUMMY]',
