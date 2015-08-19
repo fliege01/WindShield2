@@ -124,7 +124,7 @@ WSCore.func.initlogin = function(){
           dataset.push($(this).context.value);
         });
       WSCore.func.login(dataset[0],dataset[1], function(res){
-        if(typeof res === 'object'){
+        if(typeof res !== 'object'){
           WSCore.debug('[DEBUG] Login canceled');
           WSCore.debug('Update Login');
           WSCore.modal.destroy(function(){
@@ -190,6 +190,7 @@ WSCore.func.login = function (username,password, callback) {
       })
       .done(function( data ) {
       	data = JSON.parse(data);
+      	console.log (data);
         if(data.status == 200){
           callback(data);
         }else{
