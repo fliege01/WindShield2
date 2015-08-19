@@ -38,7 +38,8 @@ var WS = {
       
       console.log($(this.DOM));
       $(this.DOM).off();
-      $(this.DOM).animate({right:0},1000, function(){
+      var outerwidth = 
+      $(this.DOM).animate({right: '-' + this.params.width},1000, function(){
         $(this.DOM).remove();
         this.DOM = undefined;
       });
