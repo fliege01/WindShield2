@@ -53,6 +53,32 @@ var WS = {
     for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
     for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
     return obj3;
+  },
+  ajax : function(path, params, callback){
+    if(typeof callback === 'undefined' && typeof params === 'fucntion'){
+      console.log('var2 is a function');
+      var type = "GET";
+      var var2 = params;
+    }
+    if(typeof callback === 'undefined' && typeof params === 'object'){
+      console.log('var2 is a object');
+      var type = "POST";
+      var var2 = params;
+    }
+    if(typeof callback === 'function' && typeof params === 'object'){
+      console.log('var2 is a object an callback is set');
+      var type = "POST";
+      var var2 = params;
+    }
+    $.ajax({
+        url: path,
+		    type: type
+    })
+    .done(function( d ) {
+    	if(typeof callback === 'function'){
+  	  	callback(d);
+  	  }
+    });
   }
   
   
