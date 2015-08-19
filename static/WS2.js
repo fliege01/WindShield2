@@ -28,10 +28,10 @@ var WS = {
     this.DOM.animate({right:0},1000);
     
     if(this.params.cancelable == true){
-      $(this.DOM).children('.close').on('click', this.params.onCancelClick);
+      $(this.DOM).children('.close').on('click', null, this, this.params.onCancelClick);
     }
     if(this.params.editable == true){
-      $(this.DOM).children('.edit').on('click', this.params.onEditClick);
+      $(this.DOM).children('.edit').on('click', null, this, this.params.onEditClick);
     }
     
     this.hide = function(){
