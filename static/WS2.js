@@ -4,7 +4,7 @@ var WS = {
     if(typeof innerhtml === 'string'){
       this.innerHtml = innerHtml;
     }else{
-      this.innerHtml = '[DUMMY]';
+      //this.innerHtml = '[DUMMY]';
     }
     console.log(this.innerHtml);
     this.params = {
