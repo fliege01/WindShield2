@@ -132,6 +132,7 @@ WSCore.func.initlogin = function(){
             WSCore.func.initlogin ();
           });
         }else{
+        	console.log(this);
           $.ajax({
             type : "POST",
             url : "/auth/info"
