@@ -29,11 +29,11 @@ var WS = {
     
     if(this.params.cancelable == true){
       $(this.DOM).children('.close').on('click', function(e){
-        $(this.DOM).children('.edit').on('click', this.params.onCancelClick;
+        $(this.DOM).children('.edit').on('click', this.params.onCancelClick);
       });
     }
     if(this.params.editable == true){
-      $(this.DOM).children('.edit').on('click', this.params.onEditClick;
+      $(this.DOM).children('.edit').on('click', this.params.onEditClick);
     }
     
     this.hide = function(){
