@@ -5,8 +5,8 @@ module.exports = function(req, res, next){
       global.core.db.insert(
         "INSERT INTO `user` (`id`, `username`, `password`) VALUES (NULL, ? , ? );",
         [req.body.username, global.include['passwordcrypt'].generate(req.body.password)],
-        function(err) {
-            if (err) throw err;
+        function(result, info) {
+            
             var out = {
               status : 200,
               message : 'User added'
