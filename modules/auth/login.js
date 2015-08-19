@@ -9,7 +9,9 @@ module.exports = function(req, res, next){
         [req.body.username],
         function(rows, fields, info){
           if(typeof rows[0] !== 'undefined'){
-          if(global.corepack['passwordcrypt']().verify(rows[0].password, req.body.password)){
+            var check = global.corepack['passwordcrypt']().verify(rows[0].password, req.body.password);
+            console.log(check);
+          if(check){
             
             var newuuid = global.core.modules.uuid.v4();
             var checkid = global.core.modules.uuid.v4();
