@@ -9,7 +9,7 @@ var WS = {
       editable : true,
       cancelable : true,
       onButtonClick : null,
-      onCancelClick : null,
+      onCancelClick : function(){ this.hide(); },
       onEditClick : null,
       onShowFinish : null
     };
@@ -29,11 +29,11 @@ var WS = {
     
     if(this.params.cancelable == true){
       $(this.DOM).children('.close').on('click', function(e){
-        console.log('Close');
+        $(this.DOM).children('.edit').on('click', this.params.onCancelClick;
       });
     }
     if(this.params.editable == true){
-      
+      $(this.DOM).children('.edit').on('click', this.params.onEditClick;
     }
     
     this.hide = function(){
