@@ -55,15 +55,15 @@ var WS = {
     return obj3;
   },
   ajax : function(path, params, callback){
-    if(typeof callback === 'undefined' && typeof params === 'fucntion'){
+    if(typeof callback == 'undefined' && typeof params == 'fucntion'){
       console.log('var2 is a function');
       var type = "GET";
       var var2 = params;
-    }else if(typeof callback === 'undefined' && typeof params === 'object'){
+    }else if(typeof callback == 'undefined' && typeof params == 'object'){
       console.log('var2 is a object');
       var type = "POST";
       var var2 = params;
-    }else if(typeof callback === 'function' && typeof params === 'object'){
+    }else if(typeof callback == 'function' && typeof params == 'object'){
       console.log('var2 is a object an callback is set');
       var type = "POST";
       var var2 = params;
