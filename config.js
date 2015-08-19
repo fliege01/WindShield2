@@ -5,7 +5,7 @@ mysqlpass : 'qwertz123',
 mysqlname : 'WS2',
 
 port : 7093,
-secret : 'windshield'
+secret : 'windshield',
 
 
 
