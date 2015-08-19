@@ -10,7 +10,7 @@ module.exports = function(req, res, next){
             var out = {
               status : 200,
               message : 'User added'
-            }
+            };
             res.send(JSON.stringify(out));
           });
     }else{
@@ -22,4 +22,4 @@ module.exports = function(req, res, next){
       
     }
   }
-}
+
