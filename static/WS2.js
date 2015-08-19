@@ -27,14 +27,23 @@ var WS = {
     modalHtml += '<button data-button="cancel" class="btn">Abbrechen</button>';
     }
     modalHtml += '</div></div>';
-    this.modalHtml = modalHtml;
     
-    this.DOM = $(this.modalHtml).appendTo('body');
+    this.DOM = $(modalHtml).appendTo('body');
     var pos = $(window).width() - this.params.width;
-      this.DOM.width( this.params.width + 'px');
-      this.DOM.animate({right:0},1000);
-      
+    this.DOM.width( this.params.width + 'px');
+    this.DOM.animate({right:0},1000);
     
+    if(this.params.cancelable == true){
+      
+    }
+    if(this.params.editable == true){
+      
+    }
+    
+    this.hide = function(){
+      $(this.DOM).off();
+      $(this.DOM).remove();
+    }
       
     return this;
   },
