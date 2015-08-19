@@ -7,8 +7,7 @@ module.exports = function(req, res, next){
       "FROM `athlete`, `unit`, `rank` " +
       "WHERE `athlete`.`unit` = `unit`.`id` AND `athlete`.`rank` = `rank`.`id`;",
       [],
-      function(err, row, fields) {
-      if (err) throw err;
+      function(row, fields, info) {
       res.send(JSON.stringify(row));
     });
   }else{
@@ -19,8 +18,7 @@ module.exports = function(req, res, next){
         "FROM `athlete`, `unit`, `rank` "+
         "WHERE `athlete`.`unit` = `unit`.`id` AND `athlete`.`rank` = `rank`.`id`" + athleteQueryFilter(searchreq) + ";";
         [],
-        function(err, row, fields) {
-        if (err) throw err;
+        function(row, fields, info) {
         
       });
   }
