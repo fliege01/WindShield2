@@ -9,7 +9,7 @@ var WS = {
       editable : true,
       cancelable : true,
       onButtonClick : null,
-      onCancelClick : function(){ /*this.hide();*/ console.log(this); },
+      onCancelClick : function(e){ /*this.hide();*/ console.log(e); },
       onEditClick : null,
       onShowFinish : null
     };
