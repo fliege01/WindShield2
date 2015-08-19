@@ -7,6 +7,7 @@ module.exports = function(req, res, next){
         [],
         function(err, row, fields) {
           if (err) throw err;
+          console.log (err);
           res.send(JSON.stringify(row));
         });
 };
