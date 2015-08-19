@@ -35,6 +35,8 @@ var WS = {
     }
     
     this.hide = function(){
+      
+      console.log($(this.DOM));
       $(this.DOM).off();
       $(this.DOM).animate({right:0},1000, function(){
         $(this.DOM).remove();
