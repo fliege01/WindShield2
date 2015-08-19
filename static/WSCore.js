@@ -124,6 +124,7 @@ WSCore.func.initlogin = function(){
           dataset.push($(this).context.value);
         });
       WSCore.func.login(dataset[0],dataset[1], function(res){
+      	console.log(res);
         if(!res){
           WSCore.debug('[DEBUG] Login canceled');
           WSCore.debug('Update Login');
@@ -189,6 +190,7 @@ WSCore.func.login = function (username,password, callback) {
           }
       })
       .done(function( data ) {
+      	console.log(data);
         var result;
         if(data.status == 200){
           result = data;
