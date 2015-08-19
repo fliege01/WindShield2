@@ -22,7 +22,7 @@ var WS = {
     if(this.params.editable == true){
     modalHtml += '<span class="edit"><i class="fa fa-pencil"></i></span>';
     }
-    modatHtml += '<h2>' + this.params.title + '</h2><div class="content">' + this.innerHtml + '<button data-button="submit" class="btn primary">'+ this.params.buttontext + '</button>';
+    modalHtml += '<h2>' + this.params.title + '</h2><div class="content">' + this.innerHtml + '<button data-button="submit" class="btn primary">'+ this.params.buttontext + '</button>';
     if(this.params.cancelable == true){
     modalHtml += '<button data-button="cancel" class="btn">Abbrechen</button>';
     }
