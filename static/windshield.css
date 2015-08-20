@@ -7,15 +7,11 @@ overflow-x:hidden;
 
 /* Buttons */
 .btn {
-  padding: 0.5rem;
-  width: 100%;
+  padding: 0.5em 9.75rem;
   background-color: grey;
   border: solid 0px;
   color: white;
   font-size: 15px;
-  margin-top: 2px;
-  display: block;
-  box-sizing: content-box;
 }
 .btn:hover {
   background-color: rgb(95, 95, 95);
