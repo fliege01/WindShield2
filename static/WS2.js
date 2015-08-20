@@ -54,6 +54,7 @@ var WS = {
       this.bind();
     }
       
+    this.bind();
     return this;
   },
   objectMerge : function(obj1, obj2){
