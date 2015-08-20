@@ -51,7 +51,7 @@ var WS = {
       var outerwidth = 
       $(this.DOM).animate({right: '-' + this.params.width},1000, function(){
       	console.log(this);
-        this.DOM.remove();
+        $(this.DOM).remove();
         this.DOM = undefined;
       });
     }
@@ -177,7 +177,6 @@ var WS = {
   },
   moduleManager : function(){
   	this.m = {};
-  	
   	this.addModule = function(name, obj){
   		if(typeof this.m[name] == 'undefined'){
   			this.m[name] = obj;
@@ -186,8 +185,6 @@ var WS = {
   			return false;
   		}
   	};
-  	
-  	
   	return this;
   }
 };
