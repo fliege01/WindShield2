@@ -28,7 +28,7 @@ function initlogin (){
       });
       
       WS.ajax('/auth/login', {username : dataset[0], password : dataset[1]}, function(d){
-        console.log(data);
+        console.log(d);
       });
       
     }
