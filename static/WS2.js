@@ -145,7 +145,8 @@ var WS = {
     this.destroy = function(){
     	this.DOM.animate({
     		left : '-18rem'
-  		}, function(){
+  		}, function(e){
+  			console.log(e);
     		this.DOM.remove();
   		});
     };
