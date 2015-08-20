@@ -1,4 +1,5 @@
 "use strict";
+var global = {};
 var WS = {
   modal : function(innerHtml, params){
     this.innerHtml = innerHtml;
@@ -92,6 +93,28 @@ var WS = {
   	  	callback(d);	
   		}
     });
+  },
+  
+  menu : function(){
+    
+  },
+  
+  permissions : function(){
+    this.permobj = {};
+    
+    this.addPermissions = function(obj){
+      this.permobj = WS.objectMerge(this.permobj, obj);
+    }
+    
+    this.hasPermission(name){
+      if(typeof this.permobj[name] !== 'undefined' && this.permobj[name] == true){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    
+    
   }
   
   
