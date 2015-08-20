@@ -11,6 +11,7 @@ function tryLogin(){
     initlogin();
   }else{
     global.permissions.addPermissions(data.permissions);
+    global.menu = WS.menu();
   }
 });  
 }
