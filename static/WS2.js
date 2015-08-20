@@ -94,7 +94,6 @@ var WS = {
   		}
     });
   },
-  
   menu : function(){
     var nav = "";
     nav +='<input type="test" class="globalsearch" value="Suche" /><ul>';
@@ -124,7 +123,7 @@ var WS = {
     this.DOM.animate({
       left: '0em'
     }, 600);
-       
+    console.log(this.DOM.children('nav'));
     $(this.DOM).children('nav').children('.globalsearch').on('click', null, this, function(e){
       if(e.target.value == 'Suche'){
         e.target.value = '';
@@ -145,11 +144,9 @@ var WS = {
     
     return this;
   },
-  
   search : function(query, page){
 	  
   },
-  
   permissions : function(){
     this.permobj = {};
     
@@ -167,9 +164,6 @@ var WS = {
     
     
   }
-  
-  
-  
 };
 
 global.permissions = new WS.permissions();
