@@ -112,7 +112,7 @@ var WS = {
     if(global.permissions.hasPermission("discipline.view")) nav += '</li>';
         
     if(global.permissions.hasPermission("result.view")) nav += '<li><a href="#" class="mainlink">Resultate</a><div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Übersicht</a></li>';
-    if(global.permissions.hasPermission("result.view" && global.permissions.hasPermission("result.certificate")) nav += '<li><a href="#">Urkunde</a></li>';
+    if(global.permissions.hasPermission("result.view") && global.permissions.hasPermission("result.certificate")) nav += '<li><a href="#">Urkunde</a></li>';
     if(global.permissions.hasPermission("result.view")) nav += '</ul></li>';
 
     if(global.permissions.hasPermission("system.view")) nav += '<li><a href="#" class="mainlink">System</a> <div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Konfiguration</a></li><li><a href="#">Benutzer</a></li><li><a href="#">Urkunde bearbeiten</a></li><li><a href="#">Datenhaltung</a></li><li><a href="#">Konfiguration</a></li></ul></li>';      
