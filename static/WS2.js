@@ -32,10 +32,10 @@ var WS = {
         $(this.DOM).children('.close').on('click', null, this, this.params.onCancelClick);
       }
       if(this.params.editable == true){
-        $(this.DOM).children('.content').children('').on('click', null, this, this.params.onEditClick);
+        $(this.DOM).children('.edit').on('click', null, this, this.params.onEditClick);
       }
       if(typeof this.params.onButtonClick == 'function'){
-        $('[data-modal="'+binds.title+'"] [data-enter="submit"]').on('keydown', null, this, function (e){
+        $(this.DOM).children('.content').on('keydown', null, this, function (e){
           if(e.keyCode == 13){
             this.params.onButtonClick(e);
           }
