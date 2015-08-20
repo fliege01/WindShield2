@@ -16,7 +16,7 @@ WS.ajax('/auth/info', function(data){
 
 function initlogin (){
   var html = '<form><input type="text" data-form="input" class="modalinput" placeholder="Benutzername"><input data-form="input" data-enter="submit" type="password" class="modalinput" placeholder="Passwort"></form>';
-  var global.loginmodal = new WS.modal(html, {
+  global.loginmodal = new WS.modal(html, {
     title : 'Login',
     buttontext : 'Login',
     cancelable : false,
