@@ -23,7 +23,7 @@ function initlogin (){
     onButtonClick : function(e){
       var dataset = [];
       console.log(e.data.DOM);
-      var modalFormDOM = $(e.data.DOM).children('.content').children('button');
+      var modalFormDOM = $(e.data.DOM).children('.content form [data-form="input"]');
       console.log(modalFormDOM);
       modalFormDOM.each(function(){
         dataset.push($(this).context.value);
