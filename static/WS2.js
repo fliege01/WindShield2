@@ -177,7 +177,7 @@ var WS = {
   	this.m = {};
   	
   	this.addModule = function(name, obj){
-  		if(typeof this.m[name] !== 'undefined'){
+  		if(typeof this.m[name] == 'undefined'){
   			this.m[name] = obj;
   			return true;
   		}else{
