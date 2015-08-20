@@ -139,10 +139,14 @@ var WS = {
 
     };
   });
-
-    
-    
-    
+  $('[data-navigate]').off();
+  $('[data-navigate]').on('click', function(e){
+    //WSCore.menu.navigate(e.target.dataset.action);
+    console.log(e.target.dataset);
+  });
+  $('[data-navigate]').on('remove', function(e){
+    $('[data-navigate]').off();
+  });
     
     this.DOM.animate({
       left: '0em'
