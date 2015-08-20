@@ -135,7 +135,7 @@ var WS = {
   	  }
     });
     $(this.DOM).children('.globalsearch').on('keyup', function(e){
-  	WS.search(''):
+  	WS.search('');
   	console.log(e);
     });
     $(this.DOM).children('.globalsearch').on('remove', function(e){
