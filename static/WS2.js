@@ -104,10 +104,10 @@ var WS = {
     if(global.permissions.hasPermission("athletes.add") && global.permissions.hasPermission("athletes.view")) nav += '<div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Athleten hinzufügen</a></li></ul>';
     if(global.permissions.hasPermission("athletes.view")) nav += '</li>';
     
-    if(global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#" class="mainlink">Disziplinen</a>';'
+    if(global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#" class="mainlink">Disziplinen</a>';
     if(global.permissions.hasPermission("discipline.add.result") || global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '<div class="dropdownbtn">&gt;</div><ul class="dropdown">';
-    if(global.permissions.hasPermission("discipline.add.result") && global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#">Ergebnis hinzufügen</a></li>';'
-    if(global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#">Staffelteam hinzufügen</a></li>';'
+    if(global.permissions.hasPermission("discipline.add.result") && global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#">Ergebnis hinzufügen</a></li>';
+    if(global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#">Staffelteam hinzufügen</a></li>';
     if(global.permissions.hasPermission("discipline.add.result") || global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '</ul>';
     if(global.permissions.hasPermission("discipline.view")) nav += '</li>';
         
