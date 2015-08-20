@@ -186,6 +186,9 @@ z-index:550;
   padding-top:1em;
   padding-bottom:1em;
 }
+.modal .content .alert.alert-danger {
+  background-color:red;
+}
 .modal h2 {
   margin-left: 1em;
   margin-right: 1em;
