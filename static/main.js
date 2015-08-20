@@ -51,5 +51,5 @@ global.moduleManager.addModule('logout', {
       global.menu.destroy();
     });
   }
-}
+});
 
