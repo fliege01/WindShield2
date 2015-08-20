@@ -3,7 +3,6 @@ $( document ).ready(function() {
 WS.ajax('/auth/info', function(data){
   $('.loadingscreen').fadeOut(800);
   data = JSON.parse(data);
-  console.log(data);
   if(data.status == 4001){
     initlogin();
   }else{
@@ -32,6 +31,7 @@ function initlogin (){
         console.log(d);
         if(d.status == 403){
           // Login incorrect
+          console.log(this);
         }else if(d.status == 200){
           // Login correct
         }
