@@ -146,7 +146,8 @@ var WS = {
     	this.DOM.animate({
     		left : '-18rem'
   		}, function(){
-  			$('nav').destroy();
+  			$(this.DOM).remove();
+        		this.DOM = undefined;
   		});
     };
     
