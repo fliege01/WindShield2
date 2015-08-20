@@ -50,14 +50,12 @@ var WS = {
     }
     this.update = function(html){
       $(this.DOM).off();
-      
-      
       var modalHtml = '';
-    if(this.params.cancelable == true){ modalHtml += '<span class="close"><i class="fa fa-times"></i></span>'; }
-    if(this.params.editable == true){ modalHtml += '<span class="edit"><i class="fa fa-pencil"></i></span>'; }
-    modalHtml += '<h2>' + this.params.title + '</h2><div class="content">' + this.html + '<button data-button="submit" class="btn primary">'+ this.params.buttontext + '</button>';
-    if(this.params.cancelable == true){ modalHtml += '<button data-button="cancel" class="btn">Abbrechen</button>'; }
-    modalHtml += '</div>';
+      if(this.params.cancelable == true){ modalHtml += '<span class="close"><i class="fa fa-times"></i></span>'; }
+      if(this.params.editable == true){ modalHtml += '<span class="edit"><i class="fa fa-pencil"></i></span>'; }
+      modalHtml += '<h2>' + this.params.title + '</h2><div class="content">' + html + '<button data-button="submit" class="btn primary">'+ this.params.buttontext + '</button>';
+      if(this.params.cancelable == true){ modalHtml += '<button data-button="cancel" class="btn">Abbrechen</button>'; }
+      modalHtml += '</div>';
     
       
       $(this.DOM).html(modalHtml);
