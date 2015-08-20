@@ -142,7 +142,7 @@ var WS = {
   console.log('bind');
   $('[data-navigate]').on('click', function(e){
     //WSCore.menu.navigate(e.target.dataset.action);
-    console.log(ahh);
+    
     console.log(e.target.dataset);
   });
   $('[data-navigate]').on('remove', function(e){
