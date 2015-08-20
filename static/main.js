@@ -33,9 +33,10 @@ function initlogin (){
         console.log(d.code);
         if(d.code == 403){
           // Login incorrect
-          console.log(this);
+          
         }else if(d.code == 200){
           // Login correct
+          global.loginmodal.hide();
         }
       });
       
