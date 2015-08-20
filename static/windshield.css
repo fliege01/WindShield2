@@ -179,8 +179,8 @@ z-index:550;
  z-index:100;
 }
 .modal .content{
-  margin-left:1em;
-  margin-right:1em;
+  padding-left:1em;
+  padding-right:1em;
 }
 .modal .content .alert {
   margin-left: -1em;
@@ -192,7 +192,9 @@ z-index:550;
 }
 .modal .content .alert.alert-danger {
   background-color: #DC2520;
-  
+  -webkit-box-shadow: 0px -1px 6px 1px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0px -1px 6px 1px rgba(0,0,0,0.45);
+  box-shadow: 0px -1px 6px 1px rgba(0,0,0,0.45);
 }
 .modal h2 {
   margin-left: 1em;
