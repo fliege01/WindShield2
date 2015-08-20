@@ -1,5 +1,6 @@
 "use strict";
 var global = {};
+global.permissions = new WS.permissions();
 var WS = {
   modal : function(innerHtml, params){
     this.innerHtml = innerHtml;
@@ -96,7 +97,57 @@ var WS = {
   },
   
   menu : function(){
+    var nav = "";
+    nav +='<input type="test" class="globalsearch" value="Suche" /><ul>';
+    if(global.permissions.hasPermission("dashboard.view")) nav += '<li><a href="#" class="mainlink">Dashboard</a></li>';
+    if(global.permissions.hasPermission("athletes.view")) nav += '<li><a href="#" class="mainlink">Athleten</a>';
+    if(global.permissions.hasPermission("athletes.add") && global.permissions.hasPermission("athletes.view")) nav += '<div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Athleten hinzufügen</a></li></ul>';
+    if(global.permissions.hasPermission("athletes.view")) nav += '</li>';
     
+    if(global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#" class="mainlink">Disziplinen</a>';'
+    if(global.permissions.hasPermission("discipline.add.result") || global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '<div class="dropdownbtn">&gt;</div><ul class="dropdown">';
+    if(global.permissions.hasPermission("discipline.add.result") && global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#">Ergebnis hinzufügen</a></li>';'
+    if(global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '<li><a href="#">Staffelteam hinzufügen</a></li>';'
+    if(global.permissions.hasPermission("discipline.add.result") || global.permissions.hasPermission("discipline.add.relay") && global.permissions.hasPermission("discipline.view")) nav += '</ul>';
+    if(global.permissions.hasPermission("discipline.view")) nav += '</li>';
+        
+    if(global.permissions.hasPermission("result.view")) nav += '<li><a href="#" class="mainlink">Resultate</a><div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Übersicht</a></li>';
+    if(global.permissions.hasPermission("result.view" && global.permissions.hasPermission("result.certificate")) nav += '<li><a href="#">Urkunde</a></li>';
+    if(global.permissions.hasPermission("result.view")) nav += '</ul></li>';
+
+    if(global.permissions.hasPermission("system.view")) nav += '<li><a href="#" class="mainlink">System</a> <div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Konfiguration</a></li><li><a href="#">Benutzer</a></li><li><a href="#">Urkunde bearbeiten</a></li><li><a href="#">Datenhaltung</a></li><li><a href="#">Konfiguration</a></li></ul></li>';      
+          
+    nav += '<li><a href="#" class="mainlink">Logout</a></li></ul>';
+      
+    var menubar = '<nav style="left: -20em;">' + nav + '</nav>';
+    this.DOM = $(menubar).appendTo('body');
+       
+    this.DOM.animate({
+      left: '0em'
+    }, 600);
+       
+    $(this.DOM).children('nav').children('.globalsearch').on('click', null, this, function(e){
+      if(e.target.value == 'Suche'){
+        e.target.value = '';
+      }
+    });
+    $(this.DOM).children('nav').children('.globalsearch').on('focusout', null, this, function(e){
+      if(e.target.value == ''){
+		    e.target.value = 'Suche';
+		    // Searchreset
+  	  }
+    });
+    $(this.DOM).children('nav').children('.globalsearch').on('keyup', function(e){
+  	  // Suche durchführen
+    });
+    $(this.DOM).children('nav').children('.globalsearch').on('remove', function(e){
+      
+    });
+    
+  },
+  
+  search : function(query, page){
+	  
   },
   
   permissions : function(){
