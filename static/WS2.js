@@ -162,6 +162,15 @@ var WS = {
     }
     
     
+  },
+  moduleManager : function(){
+  	this.moduleobj = {};
+  	
+  	this.addModule = function(func){
+  		WS.objectMerge(this.moduleobj, func);
+  	};
+  	
+  	return this;
   }
 };
 
