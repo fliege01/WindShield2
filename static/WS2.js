@@ -37,7 +37,7 @@ var WS = {
       if(typeof this.params.onButtonClick == 'function'){
         $(this.DOM).children('.content').on('keydown', null, this, function (e){
           if(e.keyCode == 13){
-            this.params.onButtonClick(e);
+            e.data.params.onButtonClick(e);
           }
         });
         $(this.DOM).children('.content').children('button').on('click', null, this, this.params.onButtonClick);
