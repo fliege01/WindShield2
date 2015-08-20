@@ -104,9 +104,9 @@ var WS = {
     
     this.addPermissions = function(obj){
       this.permobj = WS.objectMerge(this.permobj, obj);
-    }
+    };
     
-    this.hasPermission(name){
+    this.hasPermission = function(name){
       if(typeof this.permobj[name] !== 'undefined' && this.permobj[name] == true){
         return true;
       }else{
