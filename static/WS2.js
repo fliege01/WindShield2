@@ -139,11 +139,8 @@ var WS = {
 
     };
   });
-  console.log('bind');
   $('[data-navigate]').on('click', function(e){
-    //WSCore.menu.navigate(e.target.dataset.action);
-    
-    console.log(e.target.dataset);
+		global.moduleManager.m[e.target.dataset.navigate].locate();
   });
   $('[data-navigate]').on('remove', function(e){
     $('[data-navigate]').off();
