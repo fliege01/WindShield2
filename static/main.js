@@ -5,7 +5,7 @@ WS.ajax('/auth/info', function(data){
   data = JSON.parse(data);
   console.log(data);
   if(data.status == 4001){
-    // Login required
+    initlogin();
   }else{
     // Init software
   }
