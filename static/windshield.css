@@ -195,6 +195,17 @@ z-index:550;
   -webkit-box-shadow: 0px -1px 6px 1px rgba(0,0,0,0.45);
   -moz-box-shadow: 0px -1px 6px 1px rgba(0,0,0,0.45);
   box-shadow: 0px -1px 6px 1px rgba(0,0,0,0.45);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d3382a+0,b70000+100 */
+  background: #d3382a; /* Old browsers */
+  background: -moz-linear-gradient(top,  #d3382a 0%, #b70000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d3382a), color-stop(100%,#b70000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #d3382a 0%,#b70000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #d3382a 0%,#b70000 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #d3382a 0%,#b70000 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #d3382a 0%,#b70000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3382a', endColorstr='#b70000',GradientType=0 ); /* IE6-9 */
+
+  
 }
 .modal h2 {
   margin-left: 1em;
