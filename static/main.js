@@ -1,19 +1,19 @@
 "use strict";
 $( document ).ready(function() {
-WS.ajax('/auth/info', function(data){
+  tryLogin();
+});
+
+function tryLogin(){
+  WS.ajax('/auth/info', function(data){
   $('.loadingscreen').fadeOut(800);
   data = JSON.parse(data);
   if(data.status == 4001){
     initlogin();
   }else{
-    console.log(data);
-    //global.permissions = new WS.permissons(data.)
+    global.permissions = new WS.permissons(data.permissions)
   }
 });  
-  
-
-});
-
+}
 function initlogin (){
   var html = '<form><input type="text" data-form="input" class="modalinput" placeholder="Benutzername"><input data-form="input" data-enter="submit" type="password" class="modalinput" placeholder="Passwort"></form>';
   global.loginmodal = new WS.modal(html, {
@@ -36,7 +36,7 @@ function initlogin (){
         }
         if(d.status == 200){
           global.loginmodal.hide();
-          // Init software
+          tryLogin();
         }
       });
       
