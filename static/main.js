@@ -21,6 +21,7 @@ function initlogin (){
     buttontext : 'Login',
     cancelable : false,
     onButtonClick : function(e){
+      console.log('trigger');
       var dataset = [];
       var modalFormDOM = $(e.data.DOM).children('.content').children('form').children('[data-form="input"]');
       modalFormDOM.each(function(){
@@ -29,6 +30,7 @@ function initlogin (){
       
       WS.ajax('/auth/login', {username : dataset[0], password : dataset[1]}, function(d){
         d = JSON.parse(d);
+        console.log(d);
         if(d.status == 403){
           // Login incorrect
           console.log('incorrect');
