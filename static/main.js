@@ -32,9 +32,10 @@ function initlogin (){
         if(d.status == 403){
           // Login incorrect
           
-        }else if(d.status == 200){
+        }
+        if(d.status == 200){
           // Login correct
-          //global.loginmodal.hide();
+          global.loginmodal.hide();
         }
       });
       
