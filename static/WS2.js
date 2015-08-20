@@ -134,20 +134,19 @@ var WS = {
 		    // Searchreset
   	  }
     });
-    $(this.DOM).children('.globalsearch').on('keyup', function(e){
+    $(this.DOM).children('.globalsearch').on('keyup', null, this, function(e){
   	WS.search('');
   	console.log(e);
     });
-    $(this.DOM).children('.globalsearch').on('remove', function(e){
-      this.DOM.off();
+    $(this.DOM).children('.globalsearch').on('remove', null, this, function(e){
+      e.data.DOM.off();
     });
     
     this.destroy = function(){
     	this.DOM.animate({
     		left : '-18rem'
-  		}, function(e){
-  			console.log(e);
-    		this.DOM.remove();
+  		}, function(){
+  			$('nav').destroy();
   		});
     };
     
