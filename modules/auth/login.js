@@ -10,7 +10,6 @@ module.exports = function(req, res, next){
         function(rows, fields, info){
           if(typeof rows[0] !== 'undefined'){
             var check = global.corepack['passwordcrypt']().verify(rows[0].password, req.body.password);
-            console.log(check);
           if(check){
             
             var newuuid = global.core.modules.uuid.v4();
@@ -30,7 +29,6 @@ module.exports = function(req, res, next){
               status : 200,
               message : "login success"
             };
-            console.log(out);
             res.send(JSON.stringify(out));
           }else{
             out = {
