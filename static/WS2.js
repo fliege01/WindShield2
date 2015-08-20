@@ -119,7 +119,31 @@ var WS = {
       
     var menubar = '<nav style="left: -20em;">' + nav + '</nav>';
     this.DOM = $(menubar).appendTo('body');
-       
+    
+    var dropdowns = $( "nav" ).find( ".dropdownbtn" );
+    dropdowns.each(function(i, obj){
+    obj.onclick = function(e){
+      switch (e.target.parentElement.children[2].style.display){
+        case 'none':
+          e.target.parentElement.children[2].style.display = "block";
+          e.target.style.transform = 'rotate(90deg)';
+          break;
+        case 'block':
+          e.target.parentElement.children[2].style.display = "none";
+          e.target.style.transform = 'rotate(0deg)';
+          break;
+        default:
+          e.target.parentElement.children[2].style.display = "block";
+          e.target.style.transform = 'rotate(90deg)';
+      }
+
+    };
+  });
+
+    
+    
+    
+    
     this.DOM.animate({
       left: '0em'
     }, 600);
