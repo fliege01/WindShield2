@@ -120,7 +120,7 @@ var WS = {
     var menubar = '<nav style="left: -20em;">' + nav + '</nav>';
     this.DOM = $(menubar).appendTo('body');
     
-    var dropdowns = $( "nav" ).find( ".dropdownbtn" );
+    var dropdowns = this.DOM.find( ".dropdownbtn" );
     dropdowns.each(function(i, obj){
     obj.onclick = function(e){
       switch (e.target.parentElement.children[2].style.display){
@@ -139,9 +139,10 @@ var WS = {
 
     };
   });
-  $('[data-navigate]').off();
+  console.log('bind');
   $('[data-navigate]').on('click', function(e){
     //WSCore.menu.navigate(e.target.dataset.action);
+    console.log(ahh);
     console.log(e.target.dataset);
   });
   $('[data-navigate]').on('remove', function(e){
