@@ -123,22 +123,21 @@ var WS = {
     this.DOM.animate({
       left: '0em'
     }, 600);
-    console.log(this.DOM.children('.globalsearch'));
-    $(this.DOM).children('nav').children('.globalsearch').on('click', null, this, function(e){
+    $(this.DOM).children('.globalsearch').on('click', null, this, function(e){
       if(e.target.value == 'Suche'){
         e.target.value = '';
       }
     });
-    $(this.DOM).children('nav').children('.globalsearch').on('focusout', null, this, function(e){
+    $(this.DOM).children('.globalsearch').on('focusout', null, this, function(e){
       if(e.target.value == ''){
 		    e.target.value = 'Suche';
 		    // Searchreset
   	  }
     });
-    $(this.DOM).children('nav').children('.globalsearch').on('keyup', function(e){
+    $(this.DOM).children('.globalsearch').on('keyup', function(e){
   	  // Suche durchführen
     });
-    $(this.DOM).children('nav').children('.globalsearch').on('remove', function(e){
+    $(this.DOM).children('.globalsearch').on('remove', function(e){
       
     });
     
