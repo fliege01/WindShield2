@@ -135,10 +135,11 @@ var WS = {
   	  }
     });
     $(this.DOM).children('.globalsearch').on('keyup', function(e){
-  	  // Suche durchführen
+  	WS.search(''):
+  	console.log(e);
     });
     $(this.DOM).children('.globalsearch').on('remove', function(e){
-      
+      this.DOM.off();
     });
     
     this.destroy = function(){
