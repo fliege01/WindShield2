@@ -22,17 +22,14 @@ function initlogin (){
     cancelable : false,
     onButtonClick : function(e){
       var dataset = [];
-      console.log(e.data.DOM);
       var modalFormDOM = $(e.data.DOM).children('.content').children('form').children('[data-form="input"]');
-      console.log(modalFormDOM);
       modalFormDOM.each(function(){
         dataset.push($(this).context.value);
       });
-      console.log(dataset);
       
-      /*WS.ajax('/auth/login', {username : username, password : password}, function(d){
-        
-      });*/
+      WS.ajax('/auth/login', {username : dataset[0], password : dataset[1]}, function(d){
+        console.log(data);
+      });
       
     }
   })
