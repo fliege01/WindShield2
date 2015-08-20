@@ -10,6 +10,7 @@ function tryLogin(){
   if(data.status == 4001){
     initlogin();
   }else{
+    console.log(data);
     global.permissions = new WS.permissions(data.permissions);
   }
 });  
