@@ -143,6 +143,7 @@ var WS = {
       
     });
     
+    return this;
   },
   
   search : function(query, page){
