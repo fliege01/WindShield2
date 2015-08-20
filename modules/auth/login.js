@@ -34,7 +34,7 @@ module.exports = function(req, res, next){
             res.send(JSON.stringify(out));
           }else{
             out = {
-              code : 403,
+              status : 403,
               message : 'login canceled'
             };
             res.send(JSON.stringify(out));
