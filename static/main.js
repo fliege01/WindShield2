@@ -49,6 +49,7 @@ global.moduleManager.addModule('logout', {
   locate : function(){
     WS.ajax('/auth/logout',  function(d){
       global.menu.destroy();
+      trylogin();
     });
   }
 });
