@@ -52,7 +52,6 @@ var WS = {
       $(this.DOM).animate({right: '-' + this.params.width},1000, function(){
       	console.log(this);
         $(this.DOM).remove();
-        this.DOM = undefined;
       });
     }
     this.update = function(html){
