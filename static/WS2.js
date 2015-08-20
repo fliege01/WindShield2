@@ -141,6 +141,14 @@ var WS = {
       
     });
     
+    this.destroy = function(){
+    	this.DOM.animate({
+    		left : '-18rem'
+  		}, function(){
+    		this.DOM.remove();
+  		});
+    };
+    
     return this;
   },
   search : function(query, page){
@@ -151,6 +159,7 @@ var WS = {
     
     this.addPermissions = function(obj){
       this.permobj = WS.objectMerge(this.permobj, obj);
+      return true;
     };
     
     this.hasPermission = function(name){
@@ -164,11 +173,17 @@ var WS = {
     
   },
   moduleManager : function(){
-  	this.moduleobj = {};
+  	this.m = {};
   	
-  	this.addModule = function(func){
-  		WS.objectMerge(this.moduleobj, func);
+  	this.addModule = function(name, obj){
+  		if(typeof this.m[name] !== 'undefined'){
+  			this.m[name] = obj;
+  			return true;
+  		}else{
+  			return false;
+  		}
   	};
+  	
   	
   	return this;
   }
