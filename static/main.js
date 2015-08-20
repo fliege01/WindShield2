@@ -31,7 +31,7 @@ function initlogin (){
       WS.ajax('/auth/login', {username : dataset[0], password : dataset[1]}, function(d){
         d = JSON.parse(d);
         if(d.status == 403){ // Login incorrect
-          var updatehtml = '<div class="alert">Login fehlerhaft</div><form><input type="text" data-form="input" class="modalinput" placeholder="Benutzername"><input data-form="input" data-enter="submit" type="password" class="modalinput" placeholder="Passwort"></form>';
+          var updatehtml = '<div class="alert alert-danger">Login fehlerhaft</div><form><input type="text" data-form="input" class="modalinput" placeholder="Benutzername"><input data-form="input" data-enter="submit" type="password" class="modalinput" placeholder="Passwort"></form>';
           global.loginmodal.update(updatehtml);
         }
         if(d.status == 200){
