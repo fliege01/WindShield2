@@ -123,7 +123,7 @@ var WS = {
     this.DOM.animate({
       left: '0em'
     }, 600);
-    console.log(this.DOM.children('nav'));
+    console.log(this.DOM);
     $(this.DOM).children('nav').children('.globalsearch').on('click', null, this, function(e){
       if(e.target.value == 'Suche'){
         e.target.value = '';
