@@ -1,4 +1,9 @@
 
 $( document ).ready(function() {
-$('.loadingscreen').fadeOut(800);
+WS.ajax('/auth/info', function(data){
+  $('.loadingscreen').fadeOut(800);
+  console.log(data);
+});  
+  
+
 });
