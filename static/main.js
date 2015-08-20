@@ -30,11 +30,11 @@ function initlogin (){
       WS.ajax('/auth/login', {username : dataset[0], password : dataset[1]}, function(d){
         d = JSON.parse(d);
         console.log(d);
-        console.log(d.status);
-        if(d.status == 403){
+        console.log(d.code);
+        if(d.code == 403){
           // Login incorrect
           console.log(this);
-        }else if(d.status == 200){
+        }else if(d.code == 200){
           // Login correct
         }
       });
