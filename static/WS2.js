@@ -7,7 +7,7 @@ var WS = {
       buttontext : '[DUMMY]',
       width : 400, 
       editable : true,
-      cancelable : true,
+      cancelable : false,
       onButtonClick : null,
       onCancelClick : function(e){ e.data.hide(); },
       onEditClick : null,
