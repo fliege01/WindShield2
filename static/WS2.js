@@ -57,15 +57,12 @@ var WS = {
   ajax : function(path, params, callback){
     if(typeof callback == 'undefined' && typeof params == 'function'){
       var type = "GET";
-      var var2 = params;
+      var ajaxparams = { url: path, type: type };
     }else if(typeof callback == 'function' && typeof params == 'object'){
       var type = "POST";
-      var var2 = params;
+      var ajaxparams = { url: path, type: type, data: params };
     }
-    $.ajax({
-        url: path,
-	type: type
-    })
+    $.ajax(ajaxparams)
     .done(function( d ) {
     	if(type == "GET"){
   			params(d);
