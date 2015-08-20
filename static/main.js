@@ -10,7 +10,6 @@ function tryLogin(){
   if(data.status == 4001){
     initlogin();
   }else{
-    console.log(data);
     global.permissions = new WS.permissions(data.permissions);
   }
 });  
@@ -22,7 +21,6 @@ function initlogin (){
     buttontext : 'Login',
     cancelable : false,
     onButtonClick : function(e){
-      console.log('trigger');
       var dataset = [];
       var modalFormDOM = $(e.data.DOM).children('.content').children('form').children('[data-form="input"]');
       modalFormDOM.each(function(){
