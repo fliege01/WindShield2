@@ -31,7 +31,7 @@ function initlogin (){
         d = JSON.parse(d);
         if(d.status == 403){
           // Login incorrect
-          var updatehtml = '<form><input type="text" data-form="input" class="modalinput" placeholder="Benutzername"><input data-form="input" data-enter="submit" type="password" class="modalinput" placeholder="Passwort"></form>';
+          var updatehtml = '<div class="alert">Login fehlerhaft</div><form><input type="text" data-form="input" class="modalinput" placeholder="Benutzername"><input data-form="input" data-enter="submit" type="password" class="modalinput" placeholder="Passwort"></form>';
           global.loginmodal.update(updatehtml);
           
         }
