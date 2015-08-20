@@ -1,6 +1,5 @@
 "use strict";
 var global = {};
-global.permissions = new WS.permissions();
 var WS = {
   modal : function(innerHtml, params){
     this.innerHtml = innerHtml;
@@ -172,5 +171,5 @@ var WS = {
   
 };
 
-
+global.permissions = new WS.permissions();
 
