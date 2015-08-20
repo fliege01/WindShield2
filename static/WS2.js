@@ -33,20 +33,17 @@ var WS = {
     if(this.params.editable == true){
       $(this.DOM).children('.edit').on('click', null, this, this.params.onEditClick);
     }
-    if(this.params.onButtonClick == 'function'){
+    if(typeof this.params.onButtonClick == 'function'){
       $(this.DOM).children('.content').children('button').on('click', null, this, this.params.onButtonClick);
     }
     
     this.hide = function(){
-      
-      console.log($(this.DOM));
       $(this.DOM).off();
       var outerwidth = 
       $(this.DOM).animate({right: '-' + this.params.width},1000, function(){
         $(this.DOM).remove();
         this.DOM = undefined;
       });
-      
     }
       
     return this;
