@@ -175,4 +175,4 @@ var WS = {
 };
 
 global.permissions = new WS.permissions();
-global.module = new WS.moduleManager();
+global.moduleManager = new WS.moduleManager();
