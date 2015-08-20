@@ -67,9 +67,11 @@ var WS = {
 	type: type
     })
     .done(function( d ) {
-    	if(typeof callback === 'function'){
-  	  	callback(d);
-  	  }
+    	if(type == "GET"){
+  			params(d);
+  		}else if(type == "POST"){
+  	  	callback(d);	
+  		}
     });
   }
   
