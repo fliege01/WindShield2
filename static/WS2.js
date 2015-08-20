@@ -115,7 +115,7 @@ var WS = {
 
     if(global.permissions.hasPermission("system.view")) nav += '<li><a href="#" class="mainlink">System</a> <div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Konfiguration</a></li><li><a href="#">Benutzer</a></li><li><a href="#">Urkunde bearbeiten</a></li><li><a href="#">Datenhaltung</a></li><li><a href="#">Konfiguration</a></li></ul></li>';      
           
-    nav += '<li><a href="#" class="mainlink">Logout</a></li></ul>';
+    nav += '<li><a href="#" class="mainlink" data-navigate="logout">Logout</a></li></ul>';
       
     var menubar = '<nav style="left: -20em;">' + nav + '</nav>';
     this.DOM = $(menubar).appendTo('body');
