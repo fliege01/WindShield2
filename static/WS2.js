@@ -50,6 +50,7 @@ var WS = {
       $(this.DOM).off();
       var outerwidth = 
       $(this.DOM).animate({right: '-' + this.params.width},1000, function(){
+      	console.log(this);
         this.DOM.remove();
         this.DOM = undefined;
       });
