@@ -46,8 +46,10 @@ function initlogin (){
 
 
 global.moduleManager.addModule('logout', {
-  WS.ajax('/auth/logout',  function(d){
-    global.menu.destroy();
-  });
+  locate : function(){
+    WS.ajax('/auth/logout',  function(d){
+      global.menu.destroy();
+    });
+  }
 }
 
