@@ -23,16 +23,17 @@ function initlogin (){
     onButtonClick : function(e){
       var dataset = [];
       console.log(e.data.DOM);
-      /*var modalFormDOM = $(e.data.DOM);
+      var modalFormDOM = $(e.data.DOM).children('.content').children('button');
+      console.log(modalFormDOM);
       modalFormDOM.each(function(){
         dataset.push($(this).context.value);
       });
+      console.log(dataset);
       
-      
-      WS.ajax('/auth/login', {username : username, password : password}, function(d){
+      /*WS.ajax('/auth/login', {username : username, password : password}, function(d){
         
-      });
-      */
+      });*/
+      
     }
   })
 }
