@@ -35,6 +35,11 @@ var WS = {
         $(this.DOM).children('.edit').on('click', null, this, this.params.onEditClick);
       }
       if(typeof this.params.onButtonClick == 'function'){
+        $('[data-modal="'+binds.title+'"] [data-enter="submit"]').on('keydown', null, this, function (e){
+          if(e.keyCode == 13){
+            this.params.onButtonClick(e);
+          }
+        });
         $(this.DOM).children('.content').children('button').on('click', null, this, this.params.onButtonClick);
       }
     }
