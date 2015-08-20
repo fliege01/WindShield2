@@ -27,15 +27,18 @@ var WS = {
     this.DOM.width( this.params.width + 'px');
     this.DOM.animate({right:0},1000);
     
-    if(this.params.cancelable == true){
-      $(this.DOM).children('.close').on('click', null, this, this.params.onCancelClick);
+    this.bind = function(){
+      if(this.params.cancelable == true){
+        $(this.DOM).children('.close').on('click', null, this, this.params.onCancelClick);
+      }
+      if(this.params.editable == true){
+        $(this.DOM).children('.edit').on('click', null, this, this.params.onEditClick);
+      }
+      if(typeof this.params.onButtonClick == 'function'){
+        $(this.DOM).children('.content').children('button').on('click', null, this, this.params.onButtonClick);
+      }
     }
-    if(this.params.editable == true){
-      $(this.DOM).children('.edit').on('click', null, this, this.params.onEditClick);
-    }
-    if(typeof this.params.onButtonClick == 'function'){
-      $(this.DOM).children('.content').children('button').on('click', null, this, this.params.onButtonClick);
-    }
+    
     
     this.hide = function(){
       $(this.DOM).off();
@@ -44,6 +47,11 @@ var WS = {
         $(this.DOM).remove();
         this.DOM = undefined;
       });
+    }
+    this.update = function(html){
+      $(this.DOM).off();
+      $(this.DOM).children('.content').html(html);
+      this.bind();
     }
       
     return this;
