@@ -1,0 +1,5 @@
+{
+    "name": "Dashboard",
+    "usepath": "/dashboard",
+    "main": "index.js"
+}
