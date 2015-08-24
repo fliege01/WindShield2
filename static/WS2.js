@@ -222,7 +222,7 @@ var WS = {
   	
   	this.destroy = function(){
   		this.DOM.animate({
-  			right: '-' + this.DOM.width() + 'px';
+  			right: '-' + this.DOM.width() + 'px'
   		}, 800, function(){$(this).remove();});
   	}
   	this.update = function(url){
