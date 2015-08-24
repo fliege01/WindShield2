@@ -176,7 +176,6 @@ var WS = {
         		this.DOM = undefined;
   		});
     };
-    
     return this;
   },
   search : function(query, page){
