@@ -211,6 +211,29 @@ var WS = {
   		}
   	};
   	return this;
+  },
+  wrapperManager : function(){
+  	this.DOM =  $('<div class="wrapper"><h2>Willkommen</h2></div>').appendTo('body');
+  	this.DOM.width($(window).width() - $('nav').width() - 20);
+  	this.DOM.css('right','-' + wrapperwidth + 'px');
+  	this.DOM.animate({
+    		right: '0px'
+  	}, 800);
+  	
+  	this.destroy = function(){
+  		this.DOM.animate({
+  			right: '-' + this.DOM.width() + 'px';
+  		}, 800, function(){$(this).remove();});
+  	}
+  	this.update = function(url){
+  		$.ajax({
+  			url: url,
+  			context: document.body
+			}).done(function(data) {
+  			$( '.wrapper' ).html(data);
+			});
+  	}
+  	return this;
   }
 };
 
