@@ -11,7 +11,7 @@ function tryLogin(){
     initlogin();
   }else{
     console.log(data);
-    for(permobj in data.permissions){
+    data.permissions.forEach(permobj){
       console.log(permobj);
       global.permissions.addPermissions(permobj);
     }
