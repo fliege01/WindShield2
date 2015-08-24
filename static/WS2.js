@@ -215,7 +215,7 @@ var WS = {
   wrapperManager : function(url){
   	this.DOM =  $('<div class="wrapper"><h2>Willkommen</h2></div>').appendTo('body');
   	this.DOM.width($(window).width() - $('nav').width() - 20);
-  	this.DOM.css('right','-' + wrapperwidth + 'px');
+  	this.DOM.css('right','-' + this.DOM.width() + 'px');
   	this.DOM.animate({
     		right: '0px'
   	}, 800);
