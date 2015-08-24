@@ -212,7 +212,7 @@ var WS = {
   	};
   	return this;
   },
-  wrapperManager : function(){
+  wrapperManager : function(url){
   	this.DOM =  $('<div class="wrapper"><h2>Willkommen</h2></div>').appendTo('body');
   	this.DOM.width($(window).width() - $('nav').width() - 20);
   	this.DOM.css('right','-' + wrapperwidth + 'px');
@@ -232,6 +232,9 @@ var WS = {
 			}).done(function(data) {
   			$( '.wrapper' ).html(data);
 			});
+  	}
+  	if(typeof url !== 'undefined'){
+  		this.update(url);
   	}
   	return this;
   }
