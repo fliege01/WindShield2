@@ -16,6 +16,7 @@ function tryLogin(){
       global.permissions.addPermissions(permobj);
     });
     global.menu = WS.menu();
+    global.wrapper = WS.wrapperManager('/dashboard');
   }
 });  
 }
