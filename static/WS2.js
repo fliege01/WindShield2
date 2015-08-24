@@ -186,7 +186,7 @@ var WS = {
     this.permobj = {};
     
     this.addPermissions = function(obj){
-      this.permobj = WS.objectMerge(this.permobj, obj);
+      this.permobj[obj.name] = obj.value;
       return true;
     };
     
