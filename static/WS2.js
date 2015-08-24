@@ -230,8 +230,7 @@ var WS = {
   			url: url,
   			context: document.body
 			}).done(function(data) {
-				console.log(data);
-  			$( '.wrapper' ).html(data);
+  				$('.wrapper').html(data);
 			});
   	}
   	if(typeof url !== 'undefined'){
