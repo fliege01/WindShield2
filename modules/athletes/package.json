@@ -1,0 +1,5 @@
+{
+    "name": "athletes",
+    "usepath": "/athletes",
+    "main": "index.js"
+}
