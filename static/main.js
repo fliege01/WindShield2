@@ -59,4 +59,14 @@ global.moduleManager.addModule('logout', {
     });
   }
 });
+global.moduleManager.addModule('dashboard', {
+  locate : function(){
+    global.wrapper.update('/dashboard');
+  }
+});
+global.moduleManager.addModule('athletes', {
+  locate : function(){
+    global.wrapper.update('/athletes');
+  }
+});
 
