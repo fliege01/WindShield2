@@ -230,6 +230,7 @@ var WS = {
   			url: url,
   			context: document.body
 			}).done(function(data) {
+				console.log(data);
   			$( '.wrapper' ).html(data);
 			});
   	}
