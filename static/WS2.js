@@ -97,8 +97,8 @@ var WS = {
   menu : function(){
     var nav = "";
     nav +='<input type="test" class="globalsearch" value="Suche" /><ul>';
-    if(global.permissions.hasPermission("dashboard.view")) nav += '<li><a href="#" class="mainlink">Dashboard</a></li>';
-    if(global.permissions.hasPermission("athletes.view")) nav += '<li><a href="#" class="mainlink">Athleten</a>';
+    if(global.permissions.hasPermission("dashboard.view")) nav += '<li><a href="#" class="mainlink" data-navigate="dashboard">Dashboard</a></li>';
+    if(global.permissions.hasPermission("athletes.view")) nav += '<li><a href="#" class="mainlink" data-navigate="athletes">Athleten</a>';
     if(global.permissions.hasPermission("athletes.add") && global.permissions.hasPermission("athletes.view")) nav += '<div class="dropdownbtn">&gt;</div><ul class="dropdown"><li><a href="#">Athleten hinzufügen</a></li></ul>';
     if(global.permissions.hasPermission("athletes.view")) nav += '</li>';
     
