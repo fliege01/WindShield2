@@ -15,8 +15,8 @@ function tryLogin(){
       console.log(permobj);
       global.permissions.addPermissions(permobj);
     });
-    global.menu = WS.menu();
-    global.wrapper = WS.wrapperManager('/dashboard');
+    global.menu = new WS.menu();
+    global.wrapper = new WS.wrapperManager('/dashboard');
   }
 });  
 }
