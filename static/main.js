@@ -10,6 +10,7 @@ function tryLogin(){
   if(data.status == 4001){
     initlogin();
   }else{
+    console.log(data.permissions);
     global.permissions.addPermissions(data.permissions);
     global.menu = WS.menu();
   }
