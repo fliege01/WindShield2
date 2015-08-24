@@ -11,10 +11,10 @@ function tryLogin(){
     initlogin();
   }else{
     console.log(data);
-    data.permissions.forEach(permobj){
+    data.permissions.forEach(function(permobj){
       console.log(permobj);
       global.permissions.addPermissions(permobj);
-    }
+    });
     global.menu = WS.menu();
   }
 });  
